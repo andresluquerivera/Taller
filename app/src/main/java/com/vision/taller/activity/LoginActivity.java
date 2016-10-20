@@ -1,11 +1,13 @@
 package com.vision.taller.activity;
 
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
@@ -64,6 +66,17 @@ public class LoginActivity extends AppCompatActivity {
 
         if (username.equalsIgnoreCase(getString(R.string.tmp_username)) && password.equalsIgnoreCase(getString(R.string.tmp_password))) {
             startMainActivity(username);
+        } else {
+            AlertDialog.Builder builder = new AlertDialog.Builder(this)
+                    .setTitle(R.string.login_error_title)
+                    .setMessage(R.string.login_error_message)
+                    .setNeutralButton(R.string.login_error_button, new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            dialogInterface.dismiss();
+                        }
+                    });
+            builder.create().show();
         }
     }
 

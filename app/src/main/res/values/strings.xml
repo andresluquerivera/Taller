@@ -4,6 +4,9 @@
     <string name="login_btn">Login</string>
     <string name="login_hint_username">Username</string>
     <string name="login_hint_password">Password</string>
+    <string name="login_error_title">Error</string>
+    <string name="login_error_message">Wrong credentials</string>
+    <string name="login_error_button">Ok</string>
 
     <string name="tmp_username">andres</string>
     <string name="tmp_password">testpass</string>
